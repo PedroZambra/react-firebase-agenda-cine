@@ -22,8 +22,8 @@ class Film extends React.Component {
                     <div key={film.id} className="container_film">
                         <ul className="film">
                             <li><p>Título: <span className="title">{film.title}</span></p></li>
-                            <li><p>Vista: <span className="title">{film.dateView}</span> </p></li>
                             <li><p>Cine: <span className="title">{film.place}</span> </p></li>
+                            <li><p>Vista: <span className="title">{film.dateView}</span> </p></li>
                             <li><button className="delete" onClick={() => this.removeFilm(film.id)}>ELIMINAR</button></li>
                         </ul>
                     </div>

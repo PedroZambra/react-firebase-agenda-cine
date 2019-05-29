@@ -36,8 +36,8 @@ class FormAddFilm extends Component{
             <div className="formulario">
                 <form autoComplete="off" onSubmit={this.handleSubmit}>
                     <p><input type="text" name="title" placeholder="Título" onChange={this.handleInput}></input></p>
-                    <p><input type="text" name="dateView" placeholder="Fecha vista" onChange={this.handleInput}></input></p>
                     <p><input type="text" name="place" placeholder="Cine" onChange={this.handleInput}></input></p>
+                    <p><input type="text" name="dateView" placeholder="Fecha vista" onChange={this.handleInput}></input></p>
                     <p><input type="submit" value="AÑADIR" className="add"></input></p>
                 </form>
             </div>

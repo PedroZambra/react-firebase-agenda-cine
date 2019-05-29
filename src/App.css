@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 p {
@@ -11,19 +12,25 @@ header {
   width: 100%;
   height: 150px;
   background-color: #000;
+  box-shadow: 0 0 5px #000;
 }
 
 footer {
   width: 100%;
   height: 150px;
   background-color: #000;
+  box-shadow: 0 0 5px #000;
+}
+
+main {
+  min-height: calc(100vh - 300px);
 }
 
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px 0;
+  padding: 30px 0;
 }
 
 .name {
@@ -36,7 +43,7 @@ nav {
 
 /* BUTTONS */
 
-.boton_film, .boton_series {
+.boton_film, .boton_series, .boton_animes {
   width: 350px;
   height:400px;
   background-size: cover;
@@ -59,7 +66,12 @@ nav {
     background-image: url("img/series.jpg");
 }
 
-.boton_film::before, .boton_series::before{
+.boton_animes {
+  background-image: url("img/boku.jpg");
+
+}
+
+.boton_film::before, .boton_series::before, .boton_animes::before{
   content: "";
   width: 100%;
   height: 100%;
@@ -72,7 +84,7 @@ nav {
   z-index: -1;
 }
 
-.boton_film:hover::before, .boton_series:hover::before {
+.boton_film:hover::before, .boton_series:hover::before, .boton_animes:hover::before {
   background: linear-gradient(to right,#000, rgba(255, 255, 255, 0.2));
 }
 
@@ -96,8 +108,9 @@ nav a:hover {
   margin: 20px auto;
   text-align: center;
   background-color: #ECECEC;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 5px;
+  box-shadow: 2px 2px 5px #000;
 }
 
 form:nth-child(1) {
@@ -109,6 +122,10 @@ form input {
   padding: 5px;
   border: 1px solid black;
   border-radius: 5px;
+}
+
+.checkbox{
+  width: auto;
 }
 
 form input:focus {
@@ -140,7 +157,8 @@ form input:focus {
 
 .container {
   width: 85%;
-  margin: 40px auto;
+  margin: 0 auto;
+  padding: 40px 0;
 }
 
 .container_film {
@@ -151,15 +169,21 @@ form input:focus {
   background-color: #E37761;
 }
 
-.film {
+.film, .serie {
   list-style: none;
   width: 100%;
-  margin-left: 20px;
+  padding-left: 20px;
 }
 
 .film li {
   display: inline-block;
   min-width: 25%;
+  line-height: 50px;
+}
+
+.serie li {
+  display: inline-block;
+  min-width: 20%;
   line-height: 50px;
 }
 
@@ -175,5 +199,20 @@ form input:focus {
 
 .load {
   text-align: center;
-  margin: 30px 0;
+  padding: 30px 0;
+}
+
+hr {
+  width: 85%;
+  margin: auto;
+  background-color: #000;
+  height: 1px;
+  border: none;
+}
+
+.topTitle {
+  text-align: center;
+  margin-top: 35px;
+  text-shadow: 3px 3px 5px #000;
+  font-variant: small-caps;
 }

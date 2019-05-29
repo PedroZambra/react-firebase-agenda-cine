@@ -4,7 +4,7 @@ import * as firebase from 'firebase';
 import FormAddSeries from './FormAddSeries';
 import Serie from './OneSerie.js';
 
-class Series extends React.Component{
+class Animes extends React.Component{
     constructor(){
         super()
         this.state = {
@@ -14,7 +14,7 @@ class Series extends React.Component{
 
     componentDidMount(){
         //ADD
-        firebase.database().ref('series').on('child_added', snapshot => {
+        firebase.database().ref('animes').on('child_added', snapshot => {
             let serie = {
               id: snapshot.key,
               title: snapshot.val().title,
@@ -32,7 +32,7 @@ class Series extends React.Component{
           });
           
         //REMOVED
-        firebase.database().ref('series').on('child_removed', snapshot => {
+        firebase.database().ref('animes').on('child_removed', snapshot => {
             this.state.series = this.state.series.filter(serie => serie.id !== snapshot.key);
 
             this.setState({
@@ -44,16 +44,16 @@ class Series extends React.Component{
     render(){
         return(
             <div>
-                <FormAddSeries nameFirebase={'series'} />
+                <FormAddSeries nameFirebase={'animes'} />
                 <hr/>
                 <h2 className="topTitle">Terminadas</h2>
-                <Serie bd={this.state.series} nameFirebase={'series'} completed={'yes'}/>
+                <Serie bd={this.state.series} nameFirebase={'animes'} completed={'yes'}/>
                 <hr/>
                 <h2 className="topTitle">Viendo</h2>
-                <Serie bd={this.state.series} nameFirebase={'series'} completed={'no'}/>
+                <Serie bd={this.state.series} nameFirebase={'animes'} completed={'no'}/>
             </div>
         )
     }
 }
 
-export default Series;
+export default Animes;
